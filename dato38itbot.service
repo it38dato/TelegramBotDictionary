@@ -1,0 +1,13 @@
+[Unit]
+Description=Telegram dato38it-bot
+After=network.target
+[Service]
+User=tuser
+Group=tuser
+WorkingDirectory=/home/tuser/TelegramBotTranslator/
+VIRTUAL_ENV=/home/tuser/TelegramBotTranslator/tenv
+Environment=PATH=$VIRTUAL_ENV/bin:$PATH
+ExecStart=/home/tuser/TelegramBotTranslator/tenv/bin/python /home/tuser/TelegramBotTranslator/pyTranslatorMenuTelebotPsql.py
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
